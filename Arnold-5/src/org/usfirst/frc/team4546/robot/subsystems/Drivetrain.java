@@ -8,7 +8,8 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Drivetrain extends Subsystem {
-
+	
+	
 	Talon frontleft = RobotMap.drivetrainFrontLeft;
 	Talon frontright = RobotMap.drivetrainFrontRight;
 	Talon rearleft = RobotMap.drivetrainRearLeft;

@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4546.robot;
 
+import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
 
 /**
@@ -24,7 +26,10 @@ public class RobotMap {
 	public static Talon drivetrainFrontRight;
 	public static Talon drivetrainRearLeft;
 	public static Talon drivetrainRearRight;
-	public static RobotDrive drivetrainChassis;
+	public static RobotDrive drivetrainChassis;	
+	
+	public static Solenoid testStuffSolenoid;
+	public static Talon testStuffMotor;
 	
 	public static void init()	{
 		
@@ -41,6 +46,14 @@ public class RobotMap {
         drivetrainChassis.setMaxOutput(1.0);
         
         drivetrainChassis.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        drivetrainChassis.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+        drivetrainChassis.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);  
+        
+        
+        
+        testStuffSolenoid = new Solenoid(0);                     
+        testStuffMotor = new Talon(4);
+        
+        
+        
 	}
 }

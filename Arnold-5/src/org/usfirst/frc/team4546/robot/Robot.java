@@ -7,6 +7,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 //import org.usfirst.frc.team4546.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4546.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team4546.robot.subsystems.TestStuff;
+
 //import org.usfirst.frc.team4546.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -21,6 +23,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static Drivetrain drivetrain;
+	public static TestStuff testStuff;
 	public static OI oi;
 
     Command autonomousCommand;
@@ -33,6 +36,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	RobotMap.init();	
     	drivetrain = new Drivetrain();
+    	testStuff = new TestStuff();
 		oi = new OI();
         chooser = new SendableChooser();
 //        chooser.addDefault("Default Auto", new ExampleCommand());
@@ -100,6 +104,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+  
     }
     
     /**

@@ -13,17 +13,13 @@ public class TestStuff extends Subsystem {
 	Talon motor = RobotMap.testStuffMotor;
 	
 	protected void initDefaultCommand() {		
-
 	}
 	
 	public void setSolenoid(boolean enabled) {
-		solenoid.set(enabled);
-		
+		solenoid.set(enabled);		
 	}
 	
 	public void setMotor(double speed){
-		motor.set(speed);
-		
+		motor.set(speed);		
 	}
-
 }

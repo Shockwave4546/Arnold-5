@@ -4,27 +4,30 @@ import org.usfirst.frc.team4546.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Drive extends Command {
-		
-public Drive()	{
-		
-		requires(Robot.drivetrain);
-	}
+public class Switch extends Command {
 	
-	protected void initialize() {
+	boolean state;
+	
+	public Switch(boolean state)	{
+		
+		requires(Robot.testStuff);
+		this.state = state;
+	
+	}
 
+	protected void initialize() {
+		Robot.testStuff.setSolenoid(state);
 	}
 
 	protected void execute() {
-		Robot.drivetrain.drive(Robot.oi.getDriveStick().getY(), Robot.oi.getDriveStick().getZ(), 1);
 	}
 
 	protected boolean isFinished() {
-		return false;
+		return true;
 	}
 
 	protected void end() {
-	
+
 	}
 
 	protected void interrupted() {

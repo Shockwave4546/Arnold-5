@@ -36,16 +36,13 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
 	
-	public Joystick driveStick;
+	Joystick driveStick;
 	
-	public OI()	{
-		
-		driveStick = new Joystick(0);
-		
+	public OI()	{		
+		driveStick = new Joystick(0);		
 	}
 	
-	public Joystick getDriveStick()	{
-		
+	public Joystick getDriveStick()	{		
 		return driveStick;
 	}
 }

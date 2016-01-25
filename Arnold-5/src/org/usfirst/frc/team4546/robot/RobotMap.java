@@ -1,5 +1,6 @@
 package org.usfirst.frc.team4546.robot;
 
+import edu.wpi.first.wpilibj.SPI;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Solenoid;
@@ -22,6 +23,7 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	
+	public static AHRS drivetrainAHRS;
 	public static Talon drivetrainFrontLeft;
 	public static Talon drivetrainFrontRight;
 	public static Talon drivetrainRearLeft;
@@ -46,14 +48,13 @@ public class RobotMap {
         drivetrainChassis.setMaxOutput(1.0);
         
         drivetrainChassis.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-        drivetrainChassis.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);  
-        
-        
+        drivetrainChassis.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);                  
+       
         
         testStuffSolenoid = new Solenoid(0);                     
         testStuffMotor = new Talon(4);
         
-        
+        drivetrainAHRS = new AHRS(SPI.Port.kMXP);        
         
 	}
 }

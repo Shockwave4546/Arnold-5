@@ -2,6 +2,7 @@ package org.usfirst.frc.team4546.robot.subsystems;
 
 import org.usfirst.frc.team4546.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
@@ -11,6 +12,7 @@ public class TestStuff extends Subsystem {
 
 	Solenoid solenoid = RobotMap.testStuffSolenoid;
 	Talon motor = RobotMap.testStuffMotor;
+	AnalogInput ussensor = RobotMap.testStuffUsSensor;
 	
 	protected void initDefaultCommand() {		
 	}
@@ -22,4 +24,9 @@ public class TestStuff extends Subsystem {
 	public void setMotor(double speed){
 		motor.set(speed);		
 	}
+	
+	public void getVoltage(){
+		ussensor.getVoltage();
+	}
+	
 }

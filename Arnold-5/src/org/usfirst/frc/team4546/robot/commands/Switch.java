@@ -10,7 +10,6 @@ public class Switch extends Command {
 	
 	public Switch(boolean state)	{
 		
-		requires(Robot.testStuff);
 		this.state = state;
 	
 	}

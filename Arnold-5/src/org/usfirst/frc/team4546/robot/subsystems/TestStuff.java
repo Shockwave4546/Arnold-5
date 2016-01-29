@@ -25,8 +25,11 @@ public class TestStuff extends Subsystem {
 		motor.set(speed);		
 	}
 	
-	public void getVoltage(){
-		ussensor.getVoltage();
+	public double getVoltage(){
+		return ussensor.getVoltage();
 	}
 	
+	public int getValue(){
+		return ussensor.getValue();
+	}		
 }

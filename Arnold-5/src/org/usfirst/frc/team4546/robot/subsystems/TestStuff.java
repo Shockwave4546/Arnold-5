@@ -12,7 +12,7 @@ public class TestStuff extends Subsystem {
 
 	Solenoid solenoid = RobotMap.testStuffSolenoid;
 	Talon motor = RobotMap.testStuffMotor;
-	AnalogInput ussensor = RobotMap.testStuffUsSensor;
+	AnalogInput USSensor = RobotMap.testStuffUSSensor;
 	
 	protected void initDefaultCommand() {		
 	}
@@ -21,15 +21,23 @@ public class TestStuff extends Subsystem {
 		solenoid.set(enabled);		
 	}
 	
-	public void setMotor(double speed){
+	public void setMotor(double speed)	{
 		motor.set(speed);		
 	}
 	
-	public double getVoltage(){
-		return ussensor.getVoltage();
+	public double getVoltage()	{
+		return USSensor.getVoltage();
 	}
 	
-	public int getValue(){
-		return ussensor.getValue();
-	}		
+	public int getValue()	{
+		return USSensor.getValue();
+	}
+	
+	public double getOffset()	{
+		return USSensor.getOffset();
+	}
+	
+	public double getDistance()	{
+		return USSensor.getVoltage()*4.9;
+	}
 }

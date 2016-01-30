@@ -34,7 +34,7 @@ public class RobotMap {
 	
 	public static Solenoid testStuffSolenoid;
 	public static Talon testStuffMotor;
-	public static AnalogInput testStuffUsSensor;
+	public static AnalogInput testStuffUSSensor;
 	
 	public static void init()	{
 		
@@ -56,7 +56,7 @@ public class RobotMap {
         
         testStuffSolenoid = new Solenoid(0);                     
         testStuffMotor = new Talon(4);
-        testStuffUsSensor = new AnalogInput(0);
+        testStuffUSSensor = new AnalogInput(0);
         
         drivetrainAHRS = new AHRS(SPI.Port.kMXP);        
         

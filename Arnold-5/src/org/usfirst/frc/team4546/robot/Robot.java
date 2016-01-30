@@ -114,7 +114,9 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putNumber("US Sensor Voltage", testStuff.getVoltage());
-        SmartDashboard.putNumber("US Sensor Voltage",  testStuff.getValue());
+        SmartDashboard.putNumber("US Sensor Value",  testStuff.getValue());
+        SmartDashboard.putNumber("Ultrasonic Offset", testStuff.getOffset());
+        SmartDashboard.putNumber("Ultrasonic Distance", testStuff.getDistance());
         SmartDashboard.putNumber("Drivetrain AHRS Angle", drivetrain.getAngle());
     }
     

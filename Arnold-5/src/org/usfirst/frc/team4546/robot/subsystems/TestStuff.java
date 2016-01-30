@@ -33,11 +33,11 @@ public class TestStuff extends Subsystem {
 		return USSensor.getValue();
 	}
 	
-	public double getOffset()	{
-		return USSensor.getOffset();
+	public double getValueDistance()	{
+		return USSensor.getValue()/4;
 	}
 	
-	public double getDistance()	{
-		return USSensor.getVoltage()*4.9;
+	public double getVoltageDistance()	{
+		return USSensor.getVoltage()/.0049;
 	}
 }

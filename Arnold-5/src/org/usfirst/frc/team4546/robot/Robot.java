@@ -115,8 +115,8 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
         SmartDashboard.putNumber("US Sensor Voltage", testStuff.getVoltage());
         SmartDashboard.putNumber("US Sensor Value",  testStuff.getValue());
-        SmartDashboard.putNumber("Ultrasonic Offset", testStuff.getOffset());
-        SmartDashboard.putNumber("Ultrasonic Distance", testStuff.getDistance());
+        SmartDashboard.putNumber("Value Distance", testStuff.getValueDistance());
+        SmartDashboard.putNumber("Voltage Distance", testStuff.getVoltageDistance());
         SmartDashboard.putNumber("Drivetrain AHRS Angle", drivetrain.getAngle());
     }
     

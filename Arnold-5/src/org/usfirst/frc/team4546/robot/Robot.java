@@ -107,15 +107,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putNumber("Value Distance", testStuff.getValueDistance());
         SmartDashboard.putNumber("Voltage Distance", testStuff.getVoltageDistance());
         SmartDashboard.putNumber("Drivetrain AHRS Angle", drivetrain.getAngle());
-        SmartDashboard.putNumber("distance", 0);
-        SmartDashboard.putNumber("NORTHEAST_X", 0);
-        SmartDashboard.putNumber("NORTHEAST_Y", 0);
-        SmartDashboard.putNumber("NORTHWEST_X", 0);
-        SmartDashboard.putNumber("NORTHWEST_Y", 0);
-        SmartDashboard.putNumber("SOUTHEAST_X", 0);
-        SmartDashboard.putNumber("SOUTHEAST_Y", 0);
-        SmartDashboard.putNumber("SOUTHWEST_X", 0);
-        SmartDashboard.putNumber("SOUTHWEST_Y", 0);
+        SmartDashboard.putNumber("centerX", table.getNumber("distance", 0));
     }
     
     /**

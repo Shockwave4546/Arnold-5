@@ -22,7 +22,7 @@ public class TestStuff extends Subsystem {
 	}
 	
 	public void setMotor(double speed)	{
-		motor.set(speed);		
+		motor.set(speed);
 	}
 	
 	public double getVoltage()	{
@@ -40,4 +40,5 @@ public class TestStuff extends Subsystem {
 	public double getVoltageDistance()	{
 		return USSensor.getVoltage()/.0049;
 	}
+
 }

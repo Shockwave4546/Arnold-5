@@ -15,6 +15,7 @@ import org.usfirst.frc.team4546.robot.subsystems.TestStuff;
 //import org.usfirst.frc.team4546.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.tables.TableKeyNotDefinedException;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -103,11 +104,17 @@ public class Robot extends IterativeRobot {
     
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+    	try
+    	{
+    			SmartDashboard.putNumber("CenterX", table.getNumber("centerX", 0.0));
+    			SmartDashboard.putNumber("CenterY", table.getNumber("centerY", 0.0));
+    			SmartDashboard.putNumber("MidpointX", table.getNumber("midpointX", 0.0));
+    			SmartDashboard.putNumber("MidpointY", table.getNumber("midpointY", 0.0));
+    	}
+    	catch (TableKeyNotDefinedException ex)
+    	{
+    	}
         
-        SmartDashboard.putNumber("Value Distance", testStuff.getValueDistance());
-        SmartDashboard.putNumber("Voltage Distance", testStuff.getVoltageDistance());
-        SmartDashboard.putNumber("Drivetrain AHRS Angle", drivetrain.getAngle());
-        SmartDashboard.putNumber("centerX", table.getNumber("distance", 0));
     }
     
     /**

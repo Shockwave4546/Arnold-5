@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
 
 //import org.usfirst.frc.team4546.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4546.robot.subsystems.Drivetrain;
+import org.usfirst.frc.team4546.robot.subsystems.ProtoCannon;
 import org.usfirst.frc.team4546.robot.subsystems.TestStuff;
 
 //import org.usfirst.frc.team4546.robot.subsystems.ExampleSubsystem;
@@ -29,6 +30,7 @@ public class Robot extends IterativeRobot {
 
 	public static Drivetrain drivetrain;
 	public static TestStuff testStuff;
+	public static ProtoCannon protoCannon;
 	public static OI oi;
 	
 	CameraServer camera;
@@ -46,6 +48,7 @@ public class Robot extends IterativeRobot {
     	RobotMap.init();	
     	drivetrain = new Drivetrain();
     	testStuff = new TestStuff();
+    	protoCannon = new ProtoCannon();
 		oi = new OI();
         chooser = new SendableChooser();
         

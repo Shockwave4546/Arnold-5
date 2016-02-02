@@ -12,6 +12,8 @@ public class ProtoCannon extends Subsystem {
 		
 	}
 	
-	
+	public void setMotor(double speed)	{
+		motor.set(speed);
+	}
 	
 }

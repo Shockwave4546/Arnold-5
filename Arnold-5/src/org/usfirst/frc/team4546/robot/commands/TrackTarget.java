@@ -1,5 +1,7 @@
 package org.usfirst.frc.team4546.robot.commands;
 
+import org.usfirst.frc.team4546.robot.*;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.PIDCommand;
 
@@ -23,7 +25,7 @@ public class TrackTarget extends PIDCommand {
 	}
 	
 	protected double returnPIDInput() {
-		return 0;
+		return targetDistance;
 	}
 
 	protected void usePIDOutput(double output) {
@@ -37,11 +39,12 @@ public class TrackTarget extends PIDCommand {
 	}
 
 	protected void execute() {
-
+	Robot.protoCannon.setMotor(turnRate);
+		
 	}
 
 	protected boolean isFinished() {
-		return ;
+		return targetDistance == 0;
 	}
 
 	protected void end() {

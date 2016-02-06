@@ -11,17 +11,19 @@ public class TrackTarget extends PIDCommand {
 	static double i = 0;
 	static double d = 0;
 	static double tolerance = 2.0f;
+	static double minimumInput = 0;
+	static double maximumInput = 320;
 	double turnRate;
 	double targetDistance;
 	
-	public TrackTarget(double targetDistance) {
+	public TrackTarget(double x) {
 		super("Track Target", p, i, d);
 		getPIDController().setInputRange(minimumInput, maximumInput);
 		getPIDController().setOutputRange(-1.0, 1.0);
 		getPIDController().setAbsoluteTolerance(tolerance);
 		getPIDController().setContinuous(true);								
 		
-		this.targetDistance = targetDistance;
+		this.targetDistance = 160 - x;
 	}
 	
 	protected double returnPIDInput() {
@@ -35,7 +37,7 @@ public class TrackTarget extends PIDCommand {
 	}
 
 	protected void initialize() {
-
+	
 	}
 
 	protected void execute() {

@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	
 	CameraServer camera;
-	NetworkTable table;
+	public static NetworkTable table;
 
     Command autonomousCommand;
     SendableChooser chooser;

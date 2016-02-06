@@ -7,7 +7,7 @@ public class ControlCannon extends CommandGroup {
 		addParallel(new YawCannon(x));
 		addParallel(new PitchCannon(y));
 		if(fireButton) {
-			addParallel(new FireCannon(fireSpeed), 1);
+			addSequential(new FireCannon(fireSpeed), 1);
 		}
 	}
 }

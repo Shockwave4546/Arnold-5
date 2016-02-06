@@ -15,7 +15,6 @@ public class ProtoCannon extends Subsystem {
 	Talon yawMotor = RobotMap.protoCannonYawMotor;
 	Talon pitchMotor = RobotMap.protoCannonPitchMotor;
 	Servo feedBall = RobotMap.protoCannonFeedBall;
-	
 	public void setPitchMotor(double speed) {
 		pitchMotor.set(speed);
 	}

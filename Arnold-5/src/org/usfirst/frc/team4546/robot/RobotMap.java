@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4546.robot;
 
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.Servo;
+
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -37,6 +39,7 @@ public class RobotMap {
 	public static Talon protoCannonFireLeft;
 	public static Talon protoCannonFireRight;
 	public static AnalogInput testStuffUSSensor;
+	public static Servo protoCannonFeedBall;
 	
 	public static void init()	{
 		
@@ -63,6 +66,7 @@ public class RobotMap {
         protoCannonPitchMotor = new Talon(5);
         protoCannonFireLeft = new Talon(6);
         protoCannonFireRight = new Talon(7);
+        protoCannonFeedBall = new Servo(8);
         
         drivetrainAHRS = new AHRS(SPI.Port.kMXP);
                 

@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class TestStuff extends Subsystem {
 
 	Solenoid solenoid = RobotMap.testStuffSolenoid;
-	Talon motor = RobotMap.testStuffMotor;
 	AnalogInput USSensor = RobotMap.testStuffUSSensor;
 	
 	protected void initDefaultCommand() {		
@@ -19,10 +18,6 @@ public class TestStuff extends Subsystem {
 	
 	public void setSolenoid(boolean enabled) {
 		solenoid.set(enabled);		
-	}
-	
-	public void setMotor(double speed)	{
-		motor.set(speed);		
 	}
 	
 	public double getVoltage()	{
@@ -40,4 +35,5 @@ public class TestStuff extends Subsystem {
 	public double getVoltageDistance()	{
 		return USSensor.getVoltage()/.0049;
 	}
+
 }

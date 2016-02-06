@@ -2,7 +2,6 @@ package org.usfirst.frc.team4546.robot;
 
 import edu.wpi.first.wpilibj.SPI;
 import com.kauailabs.navx.frc.AHRS;
-
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Solenoid;
@@ -58,7 +57,8 @@ public class RobotMap {
         testStuffMotor = new Talon(4);
         testStuffUSSensor = new AnalogInput(0);
         
-        drivetrainAHRS = new AHRS(SPI.Port.kMXP);        
-        
+        drivetrainAHRS = new AHRS(SPI.Port.kMXP);
+                
 	}
+	
 }

@@ -5,7 +5,7 @@ import org.usfirst.frc.team4546.robot.*;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.PIDCommand;
 
-public class TrackTarget extends PIDCommand {
+public class TrackTargetX extends PIDCommand {
 
 	static double p = 0.01;
 	static double i = 0;
@@ -16,7 +16,7 @@ public class TrackTarget extends PIDCommand {
 	double turnRate;
 	double targetDistance;
 	
-	public TrackTarget(double x) {
+	public TrackTargetX(double x) {
 		super("Track Target", p, i, d);
 		getPIDController().setInputRange(minimumInput, maximumInput);
 		getPIDController().setOutputRange(-1.0, 1.0);

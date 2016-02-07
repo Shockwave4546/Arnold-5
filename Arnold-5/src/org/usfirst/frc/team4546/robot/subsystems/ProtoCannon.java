@@ -3,6 +3,7 @@ package org.usfirst.frc.team4546.robot.subsystems;
 import org.usfirst.frc.team4546.robot.Robot;
 import org.usfirst.frc.team4546.robot.RobotMap;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -15,6 +16,7 @@ public class ProtoCannon extends Subsystem {
 	Talon yawMotor = RobotMap.protoCannonYawMotor;
 	Talon pitchMotor = RobotMap.protoCannonPitchMotor;
 	Servo feedBall = RobotMap.protoCannonFeedBall;
+	DigitalInput limitSwitch = RobotMap.protoCannonLimitSwitch;
 	public void setPitchMotor(double speed) {
 		pitchMotor.set(speed);
 	}

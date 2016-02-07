@@ -6,7 +6,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class FireCannon extends Command {
 	
-	boolean buttonPress;
 	double speed;
 	
 	public FireCannon(double speed) {

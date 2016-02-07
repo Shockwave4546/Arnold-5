@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.Servo;
 
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Talon;
@@ -40,6 +41,7 @@ public class RobotMap {
 	public static Talon protoCannonFireRight;
 	public static AnalogInput testStuffUSSensor;
 	public static Servo protoCannonFeedBall;
+	public static DigitalInput protoCannonLimitSwitch;
 	
 	public static void init()	{
 		
@@ -67,6 +69,7 @@ public class RobotMap {
         protoCannonFireLeft = new Talon(6);
         protoCannonFireRight = new Talon(7);
         protoCannonFeedBall = new Servo(8);
+        protoCannonLimitSwitch = new DigitalInput(9);
         
         drivetrainAHRS = new AHRS(SPI.Port.kMXP);
                 

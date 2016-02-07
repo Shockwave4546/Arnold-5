@@ -10,6 +10,7 @@ public class AutoFire extends CommandGroup {
 	double midpointX = Robot.table.getNumber("midpointX", 0.0);
 	double midpointY = Robot.table.getNumber("midpointY", 0.0);
 	boolean hasBall = RobotMap.protoCannonLimitSwitch.get();
+	boolean buttonPressed = Robot.oi.getDriveStick().getBumper();
 	public boolean seesTarget() {
 		if((midpointX == 0.0) && (midpointY == 0.0)) {
 			return false;
@@ -20,9 +21,13 @@ public class AutoFire extends CommandGroup {
 	
 	public	AutoFire()	{
 		if(seesTarget() && hasBall) {
-			addSequential(new );
+			addSequential(new TrackTarget());
+			if(buttonPressed) {
+				addSequential(new AimToFire());
+				addSequential(new FireCannon(), 1);
+			}
 		} else {
-			addParallel(new ControlCannon(Robot.oi.getDriveStick().getX(), Robot.oi.getDriveStick().getY(), Robot.oi.getDriveStick().getBumper(), 100));
+			addParallel(new ControlCannon(Robot.oi.getDriveStick().getX(), Robot.oi.getDriveStick().getY(), buttonPressed));
 		}
 		
 	}

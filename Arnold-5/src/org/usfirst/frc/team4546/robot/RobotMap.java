@@ -42,6 +42,7 @@ public class RobotMap {
 	public static AnalogInput testStuffUSSensor;
 	public static Servo protoCannonFeedBall;
 	public static DigitalInput protoCannonLimitSwitch;
+	//public static DigitalInput protoCannonAimButton;
 	
 	public static void init()	{
 		
@@ -70,6 +71,7 @@ public class RobotMap {
         protoCannonFireRight = new Talon(7);
         protoCannonFeedBall = new Servo(8);
         protoCannonLimitSwitch = new DigitalInput(9);
+        //protoCannonAimButton = new DigitalInput(10);
         
         drivetrainAHRS = new AHRS(SPI.Port.kMXP);
                 

@@ -1,39 +1,36 @@
 package org.usfirst.frc.team4546.robot.commands;
 
-import org.usfirst.frc.team4546.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
-public class FireCannon extends Command {
-	
+public class FireLeftCannonMotor extends Command {
+
+	@Override
 	protected void end() {
-		Robot.protoCannon.setFeedBall(0.0);
+		// TODO Auto-generated method stub
 
 	}
 
-	
+	@Override
 	protected void execute() {
-		Robot.protoCannon.setFireLeft(100);
-		Robot.protoCannon.setFireRight(100);
-		Robot.protoCannon.setFeedBall(75);
+		// TODO Auto-generated method stub
 
 	}
 
-	
+	@Override
 	protected void initialize() {
-		
+		// TODO Auto-generated method stub
 
 	}
 
-	
+	@Override
 	protected void interrupted() {
-		
+		// TODO Auto-generated method stub
 
 	}
 
-	
+	@Override
 	protected boolean isFinished() {
-		
+		// TODO Auto-generated method stub
 		return false;
 	}
 

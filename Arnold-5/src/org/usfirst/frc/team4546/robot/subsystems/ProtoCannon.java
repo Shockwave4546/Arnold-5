@@ -39,7 +39,7 @@ public class ProtoCannon extends Subsystem {
 	}
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new ControlCannon(Robot.oi.getDriveStick().getX(), 0, false, 0));
+		setDefaultCommand(new ControlCannon(Robot.oi.getDriveStick().getX(), 0, false));
 	}
 	
 	

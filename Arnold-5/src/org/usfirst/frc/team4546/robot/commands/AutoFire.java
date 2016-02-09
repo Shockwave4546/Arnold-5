@@ -21,7 +21,7 @@ public class AutoFire extends CommandGroup {
 	
 	public	AutoFire()	{
 		if(seesTarget() && hasBall) {
-			addSequential(new TrackTarget());
+			//addSequential(new TrackTarget());
 			if(buttonPressed) {
 				addSequential(new AimToFire());
 				addSequential(new FireCannon(), 1);

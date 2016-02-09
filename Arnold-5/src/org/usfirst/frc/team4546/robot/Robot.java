@@ -60,7 +60,7 @@ public class Robot extends IterativeRobot {
 //        chooser.addObject("My Auto", new MyAutoCommand());
         
         SmartDashboard.putData("Auto mode", chooser);
-        table = NetworkTable.getTable("Camera");
+        table = NetworkTable.getTable("SmartDashboard");
         
     }
 	
@@ -107,7 +107,7 @@ public class Robot extends IterativeRobot {
     
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-    	try
+    	/*try
     	{
     			SmartDashboard.putNumber("CenterX", table.getNumber("centerX", 0.0));
     			SmartDashboard.putNumber("CenterY", table.getNumber("centerY", 0.0));
@@ -116,7 +116,7 @@ public class Robot extends IterativeRobot {
     	}
     	catch (TableKeyNotDefinedException ex)
     	{
-    	}
+    	}*/
         
     }
     

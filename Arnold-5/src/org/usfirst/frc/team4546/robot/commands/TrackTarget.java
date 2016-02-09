@@ -14,7 +14,7 @@ public class TrackTarget extends PIDCommand {
 	
 	public TrackTarget(double targetDistance) {
 		super("Track Target", p, i, d);
-		getPIDController().setInputRange(minimumInput, maximumInput);
+		getPIDController().setInputRange(0, 0);
 		getPIDController().setOutputRange(-1.0, 1.0);
 		getPIDController().setAbsoluteTolerance(tolerance);
 		getPIDController().setContinuous(true);								
@@ -41,7 +41,7 @@ public class TrackTarget extends PIDCommand {
 	}
 
 	protected boolean isFinished() {
-		return ;
+		return false;
 	}
 
 	protected void end() {

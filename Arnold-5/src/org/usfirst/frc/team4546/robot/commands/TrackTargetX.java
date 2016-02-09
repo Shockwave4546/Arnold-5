@@ -4,6 +4,7 @@ import org.usfirst.frc.team4546.robot.*;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.PIDCommand;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class TrackTargetX extends PIDCommand {
 
@@ -12,18 +13,20 @@ public class TrackTargetX extends PIDCommand {
 	static double d = 0;
 	static double tolerance = 2.0f;
 	static double minimumInput = 0;
-	static double maximumInput = 320;
+	static double maximumInput = 1920;
 	double turnRate;
 	double targetDistanceX;
 	
 	public TrackTargetX(double x) {
 		super("Track Target", p, i, d);
 		getPIDController().setInputRange(minimumInput, maximumInput);
-		getPIDController().setOutputRange(-1.0, 1.0);
+		getPIDController().setOutputRange(-.1, .1);
 		getPIDController().setAbsoluteTolerance(tolerance);
-		getPIDController().setContinuous(true);								
+		getPIDController().setContinuous(true);
 		
-		this.targetDistanceX = 160 - x;
+		requires(Robot.protoCannon);
+		
+		this.targetDistanceX = 960 - x;
 	}
 	
 	protected double returnPIDInput() {
@@ -42,11 +45,14 @@ public class TrackTargetX extends PIDCommand {
 
 	protected void execute() {
 	Robot.protoCannon.setYawMotor(turnRate);
+	
+	SmartDashboard.putNumber("turnRate", turnRate);
+	SmartDashboard.putNumber("targetdistance", targetDistanceX);
 		
 	}
 
 	protected boolean isFinished() {
-		return targetDistanceX == 0;
+		return targetDistanceX>-50 || targetDistanceX<50;
 	}
 
 	protected void end() {

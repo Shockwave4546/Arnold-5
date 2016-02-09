@@ -33,8 +33,8 @@ public class Robot extends IterativeRobot {
 	public static ProtoCannon protoCannon;
 	public static OI oi;
 	
-	CameraServer camera;
-	public static NetworkTable table;
+	//CameraServer camera;
+	NetworkTable table;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -52,9 +52,9 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         chooser = new SendableChooser();
         
-        camera = CameraServer.getInstance();
-        camera.setQuality(50);
-        camera.startAutomaticCapture("cam0");
+        //camera = CameraServer.getInstance();
+        //camera.setQuality(50);
+        //camera.startAutomaticCapture("cam0");
         
 //        chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
@@ -127,4 +127,6 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    
 }

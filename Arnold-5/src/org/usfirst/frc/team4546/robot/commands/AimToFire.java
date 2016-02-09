@@ -5,39 +5,14 @@ import org.usfirst.frc.team4546.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class AimToFire extends Command {
-
-
 	
 	double theta = RobotMap.protoCannonPotentiometer.get();
-	double sinTheta = Math.sin(theta);
-	double theta2 = 90 - theta;
 	
 	double cannonHeight;	//Physically Measured
 	double PMHeight;		//Physically Measured
 	double dEOCToCamera;	//Physically Measured
 	
-	public double getHPMToEOC() {
-		return Math.sin(theta2) * cannonHeight;
-	}
-	public double getHCameraToEOC() {
-		return dEOCToCamera/Math.sin(theta);
-	}
-	
-	double hPMToEOC = getHPMToEOC();
-	double hCameraToEOC = getHCameraToEOC();
-
-
-	public double getCameraHeight() {
-		return hPMToEOC + PMHeight + hPMToEOC;
-	}
-	
-	double cameraHeight = getCameraHeight();
-	
-	public double getDistance() {
-		return (91 - cameraHeight)/sinTheta;
-	}
-	
-	double distance = getDistance();
+	double distance = (91 - ((Math.cos(theta) * cannonHeight) + (dEOCToCamera/Math.sin(theta)) + PMHeight))/Math.sin(theta);
 	
 	public AimToFire() {
 		

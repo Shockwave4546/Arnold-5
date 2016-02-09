@@ -39,7 +39,8 @@ public class ProtoCannon extends Subsystem {
 	}
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new ControlCannon(Robot.oi.getDriveStick().getX(), 0, false));
+		//setDefaultCommand(new ControlCannon(Robot.oi.getDriveStick().getX(), 0, false));
+		setDefaultCommand(new TrackTargetX(Robot.table.getNumber("centerX", 920)));
 	}
 	
 	

@@ -76,6 +76,8 @@ public class RobotMap {
         protoCannonPotentiometer = new AnalogPotentiometer(1, 360, 30); //http://wpilib.screenstepslive.com/s/4485/m/13809/l/241877-potentiometers-measuring-joint-angle-or-linear-motion
         
         drivetrainAHRS = new AHRS(SPI.Port.kMXP);
+        
+        
                 
 	}
 	

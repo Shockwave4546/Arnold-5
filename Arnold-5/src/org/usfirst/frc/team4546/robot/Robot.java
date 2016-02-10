@@ -1,7 +1,6 @@
 
 package org.usfirst.frc.team4546.robot;
 
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -33,9 +32,10 @@ public class Robot extends IterativeRobot {
 	public static ProtoCannon protoCannon;
 	public static OI oi;
 	
-	CameraServer camera;
+	//CameraServer camera;
 	NetworkTable table;
-
+	public static double midpointX = 960;
+	
     Command autonomousCommand;
     SendableChooser chooser;
 
@@ -52,9 +52,9 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         chooser = new SendableChooser();
         
-        camera = CameraServer.getInstance();
-        camera.setQuality(50);
-        camera.startAutomaticCapture("cam0");
+        //camera = CameraServer.getInstance();
+        //camera.setQuality(50);
+        //camera.startAutomaticCapture("cam0");
         
 //        chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
@@ -109,14 +109,16 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
     	try
     	{
-    			SmartDashboard.putNumber("CenterX", table.getNumber("centerX", 0.0));
-    			SmartDashboard.putNumber("CenterY", table.getNumber("centerY", 0.0));
-    			SmartDashboard.putNumber("MidpointX", table.getNumber("midpointX", 0.0));
-    			SmartDashboard.putNumber("MidpointY", table.getNumber("midpointY", 0.0));
+    			SmartDashboard.putNumber("centerX", table.getNumber("centerX", 0.0));
+    			SmartDashboard.putNumber("centerY", table.getNumber("centerY", 0.0));
+    			SmartDashboard.putNumber("midpointX", table.getNumber("midpointX", 0.0));
+    			SmartDashboard.putNumber("midpointY", table.getNumber("midpointY", 0.0));
     	}
     	catch (TableKeyNotDefinedException ex)
     	{
     	}
+    	SmartDashboard.putData(protoCannon);
+    	midpointX = table.getNumber("midpointX", 960);
         
     }
     
@@ -127,4 +129,6 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    
 }

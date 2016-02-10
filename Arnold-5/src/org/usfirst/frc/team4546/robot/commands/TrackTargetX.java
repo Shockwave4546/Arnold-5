@@ -47,7 +47,7 @@ public class TrackTargetX extends PIDCommand {
 	Robot.protoCannon.setYawMotor(turnRate);
 	
 	SmartDashboard.putNumber("turnRate", turnRate);
-	SmartDashboard.putNumber("targetdistance", targetDistanceX);
+	SmartDashboard.putNumber("targetDistanceX", targetDistanceX);
 		
 	}
 

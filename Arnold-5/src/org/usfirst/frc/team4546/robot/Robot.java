@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	
 	//CameraServer camera;
-	NetworkTable table;
+	public NetworkTable table;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -109,10 +109,10 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
     	try
     	{
-    			SmartDashboard.putNumber("centerX", table.getNumber("centerX", 0.0));
-    			SmartDashboard.putNumber("centerY", table.getNumber("centerY", 0.0));
-    			SmartDashboard.putNumber("midpointX", table.getNumber("midpointX", 0.0));
-    			SmartDashboard.putNumber("midpointY", table.getNumber("midpointY", 0.0));
+    			SmartDashboard.putNumber("centerX", table.getNumber("SmartDashboardcenterX", 0.0));
+    			SmartDashboard.putNumber("centerY", table.getNumber("SmartDashboardcenterY", 0.0));
+    			SmartDashboard.putNumber("midpointX", table.getNumber("SmartDashboardmidpointX", 0.0));
+    			SmartDashboard.putNumber("midpointY", table.getNumber("SmartDashboardmidpointY", 0.0));
     	}
     	catch (TableKeyNotDefinedException ex)
     	{

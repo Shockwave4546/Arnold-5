@@ -1,7 +1,6 @@
 
 package org.usfirst.frc.team4546.robot;
 
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -34,7 +33,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	
 	//CameraServer camera;
-	public NetworkTable table;
+	public static NetworkTable table;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -60,7 +59,7 @@ public class Robot extends IterativeRobot {
 //        chooser.addObject("My Auto", new MyAutoCommand());
         
         SmartDashboard.putData("Auto mode", chooser);
-        table = NetworkTable.getTable("SmartDashboard");
+        table = NetworkTable.getTable("Camera");
         
     }
 	
@@ -109,10 +108,10 @@ public class Robot extends IterativeRobot {
         Scheduler.getInstance().run();
     	try
     	{
-    			SmartDashboard.putNumber("centerX", table.getNumber("SmartDashboardcenterX", 0.0));
-    			SmartDashboard.putNumber("centerY", table.getNumber("SmartDashboardcenterY", 0.0));
-    			SmartDashboard.putNumber("midpointX", table.getNumber("SmartDashboardmidpointX", 0.0));
-    			SmartDashboard.putNumber("midpointY", table.getNumber("SmartDashboardmidpointY", 0.0));
+    			SmartDashboard.putNumber("centerX", table.getNumber("centerX", 0.0));
+    			SmartDashboard.putNumber("centerY", table.getNumber("centerY", 0.0));
+    			SmartDashboard.putNumber("midpointX", table.getNumber("midpointX", 0.0));
+    			SmartDashboard.putNumber("midpointY", table.getNumber("midpointY", 0.0));
     	}
     	catch (TableKeyNotDefinedException ex)
     	{

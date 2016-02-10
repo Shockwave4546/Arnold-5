@@ -16,7 +16,7 @@ public class TrackTargetX extends PIDCommand {
 	double turnRate;
 	double targetDistanceX = 2;
 	
-	public TrackTargetX(double x) {
+	public TrackTargetX() {
 		super("Track Target", p, i, d);
 		getPIDController().setInputRange(minimumInput, maximumInput);
 		getPIDController().setOutputRange(-.1, .1);
@@ -24,12 +24,10 @@ public class TrackTargetX extends PIDCommand {
 		getPIDController().setContinuous(true);
 		
 		requires(Robot.protoCannon);
-		
-		this.targetDistanceX = 960 - x;
 	}
 	
 	protected double returnPIDInput() {
-		return targetDistanceX;
+		return 960 - Robot.table.getNumber("midpointX", 960);
 	}
 
 	protected void usePIDOutput(double output) {
@@ -51,7 +49,7 @@ public class TrackTargetX extends PIDCommand {
 	}
 
 	protected boolean isFinished() {
-		return targetDistanceX>-50 || targetDistanceX<50;
+		return targetDistanceX > 860 || targetDistanceX < 1060;
 	}
 
 	protected void end() {

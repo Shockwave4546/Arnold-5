@@ -33,8 +33,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	
 	//CameraServer camera;
-	NetworkTable table;
-	public static double midpointX = 960;
+	public static NetworkTable table;
 	
     Command autonomousCommand;
     SendableChooser chooser;
@@ -118,7 +117,6 @@ public class Robot extends IterativeRobot {
     	{
     	}
     	SmartDashboard.putData(protoCannon);
-    	midpointX = table.getNumber("midpointX", 960);
         
     }
     

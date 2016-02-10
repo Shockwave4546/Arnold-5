@@ -107,16 +107,16 @@ public class Robot extends IterativeRobot {
     
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-    	/*try
+    	try
     	{
-    			SmartDashboard.putNumber("CenterX", table.getNumber("centerX", 0.0));
-    			SmartDashboard.putNumber("CenterY", table.getNumber("centerY", 0.0));
-    			SmartDashboard.putNumber("MidpointX", table.getNumber("midpointX", 0.0));
-    			SmartDashboard.putNumber("MidpointY", table.getNumber("midpointY", 0.0));
+    			SmartDashboard.putNumber("centerX", table.getNumber("centerX", 0.0));
+    			SmartDashboard.putNumber("centerY", table.getNumber("centerY", 0.0));
+    			SmartDashboard.putNumber("midpointX", table.getNumber("midpointX", 0.0));
+    			SmartDashboard.putNumber("midpointY", table.getNumber("midpointY", 0.0));
     	}
     	catch (TableKeyNotDefinedException ex)
     	{
-    	}*/
+    	}
         
     }
     

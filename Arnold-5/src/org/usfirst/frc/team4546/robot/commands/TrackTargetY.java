@@ -15,20 +15,17 @@ public class TrackTargetY extends PIDCommand {
 	double turnRate;
 	double targetDistanceY;
 	
-	public TrackTargetY(double y) {
+	public TrackTargetY() {
 		super(p, i, d);
 		getPIDController().setInputRange(minimumInput, maximumInput);
 		getPIDController().setOutputRange(-1.0, 1.0);
 		getPIDController().setAbsoluteTolerance(tolerance);
-		getPIDController().setContinuous(true);								
-		
-		this.targetDistanceY = 100 - y;
+		getPIDController().setContinuous(true);										
 	}
-
 	
 	protected double returnPIDInput() {
 		
-		return targetDistanceY;
+		return 100 - Robot.table.getNumber("midpointY", 100);
 	}
 
 	

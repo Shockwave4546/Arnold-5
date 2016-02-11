@@ -48,8 +48,8 @@ public class RobotMap {
 	
 	public static void init()	{
 		
-		drivetrainFrontLeft = new Talon(0);
-		drivetrainFrontRight = new Talon(1);
+		drivetrainFrontLeft = new Talon(5);
+		drivetrainFrontRight = new Talon(0);
 		drivetrainRearLeft = new Talon(2);
 		drivetrainRearRight = new Talon(3);
 		
@@ -67,8 +67,8 @@ public class RobotMap {
         testStuffSolenoid = new Solenoid(0);                     
         testStuffUSSensor = new AnalogInput(0);
         
-        protoCannonYawMotor = new Talon(4);
-        protoCannonPitchMotor = new Talon(5);
+        protoCannonYawMotor = new Talon(1);
+        protoCannonPitchMotor = new Talon(4);
         protoCannonFireLeft = new Talon(6);
         protoCannonFireRight = new Talon(7);
         protoCannonFeedBall = new Servo(8);

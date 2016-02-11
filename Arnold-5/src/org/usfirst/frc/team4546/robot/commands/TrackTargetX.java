@@ -49,7 +49,7 @@ public class TrackTargetX extends PIDCommand {
 	}
 
 	protected boolean isFinished() {
-		return targetDistanceX > 860 || targetDistanceX < 1060;
+		return Robot.table.getNumber("midpointX", 960) > 945 && Robot.table.getNumber("midpointX", 960) < 975;
 	}
 
 	protected void end() {

@@ -61,7 +61,7 @@ public class TrackTargetY extends PIDCommand {
 	
 	protected boolean isFinished() {
 		
-		return targetDistanceY == 0;
+		return Robot.table.getNumber("midpointY", 100) > 85 && Robot.table.getNumber("midpointY", 100) < 115;
 	}
 
 }

@@ -17,7 +17,6 @@ public class ProtoCannon extends Subsystem {
 	Talon pitchMotor = RobotMap.protoCannonPitchMotor;
 	Servo feedBall = RobotMap.protoCannonFeedBall;
 	DigitalInput limitSwitch = RobotMap.protoCannonLimitSwitch;
-	//DigitalInput aimButton = RobotMap.protoCannonAimButton;
 	public void setPitchMotor(double speed) {
 		pitchMotor.set(speed);
 	}
@@ -38,10 +37,14 @@ public class ProtoCannon extends Subsystem {
 		feedBall.setAngle(servoAngle);
 	}
 	
+	public boolean hasBall()	{
+		
+		return limitSwitch.get();
+	}
+	
 	protected void initDefaultCommand() {
 		//setDefaultCommand(new ControlCannon(Robot.oi.getDriveStick().getX(), 0, false));
 		setDefaultCommand(new TrackTargetX());
 	}
-	
 	
 }
